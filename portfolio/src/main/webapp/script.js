@@ -26,3 +26,16 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+function addRandomFact() {
+  const facts =
+      ['Peanuts aren\'t actually nuts', 'A group of squids is called a squad', 
+      'The speed of a computer mouse is measured in \'Mickeys\'', 'Baby otters can\'t swim'];
+
+  // Pick a random greeting.
+  const fact = facts[Math.floor(Math.random() * facts.length)];
+
+  // Add it to the page.
+  const factContainer = document.getElementById('fact-container');
+  factContainer.innerText = fact;
+}
