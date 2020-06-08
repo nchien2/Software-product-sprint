@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <title>Nathaniel's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <script src="script.js"></script>
   </head>
   <body>
     <div id="content">
       <h1>Nathaniel's Portfolio</h1>
-      <button onclick="location.href='index.html';" >About Me</button>
-      <button onclick="location.href='projects.html';" >My Projects</button>
-      <button onclick="location.href='gallery.html';" >Image Gallery</button>
+
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">About me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="projects.html">My Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="gallery.html">Image Gallery</a>
+         </li>
+      </ul>
 
       <h3>About Me</h3>
+
       <p>My name is Nathaniel Chien, a sophomore at Stanford studying computer science
           with a concentration in biocomputation. I was born and raised in the California
           central valley, but both my parents are immigrants; my mom emigrated from the Philippines
@@ -22,12 +33,10 @@
           exploring the applications that tech can have in research and healthcare. What 
           draws me to tech is the potential to impact people across the world.</p>
 
-      <h3></h4>
-      <p>Click here to get a fun fact:</p>
-      <button onclick="addRandomFact()">Fact!</button>
+      <h3>Links</h3>
+      <a href="https://github.com/nchien2">Github</a><br>
+      <a href="https://www.linkedin.com/in/nathaniel-chien-10050a192/">LinkedIn</a>
 
-
-      <div id="fact-container"></div>
     </div>
   </body>
 </html>
