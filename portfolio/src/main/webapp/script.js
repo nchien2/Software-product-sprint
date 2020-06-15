@@ -19,10 +19,10 @@ function getData() {
   fetch('/data').then(response => response.json()).then((data) => {
 
     const dataElement = document.getElementById('data-container');
+
     dataElement.innerHTML = ''; 
     data.map(createListElement)
         .forEach(element => dataElement.appendChild(element));
-    
   });
 }
 
