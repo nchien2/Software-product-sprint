@@ -22,7 +22,8 @@ function getData() {
     dataElement.innerHTML = '';
     dataElement.appendChild(createListElement(data[0]));
     dataElement.appendChild(createListElement(data[1]));
-    dataElement.appendChild(createListElement(data[2]));
+    data.map(creatListElement)
+            .forEach(dataElement.appendChild);
   });
 }
 function addRandomFact() {
