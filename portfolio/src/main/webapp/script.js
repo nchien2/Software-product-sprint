@@ -19,23 +19,11 @@ function getData() {
   fetch('/data').then(response => response.json()).then((data) => {
 
     const dataElement = document.getElementById('data-container');
-    dataElement.innerHTML = '';
-    dataElement.appendChild(createListElement(data[0]));
-    dataElement.appendChild(createListElement(data[1]));
-    dataElement.appendChild(createListElement(data[2]));
+    dataElement.innerHTML = ''; 
+    data.map(createListElement)
+        .forEach(element => dataElement.appendChild(element));
+    
   });
-}
-function addRandomFact() {
-  const facts =
-      ['Peanuts aren\'t actually nuts', 'A group of squids is called a squad', 
-      'The speed of a computer mouse is measured in \'Mickeys\'', 'Baby otters can\'t swim'];
-
-  // Pick a random greeting.
-  const fact = facts[Math.floor(Math.random() * facts.length)];
-
-  // Add it to the page.
-  const factContainer = document.getElementById('fact-container');
-  factContainer.innerText = fact;
 }
 
 function createListElement(text) {

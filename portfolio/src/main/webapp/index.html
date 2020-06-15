@@ -38,8 +38,18 @@
       <a href="https://www.linkedin.com/in/nathaniel-chien-10050a192/">LinkedIn</a>
 
       <h3>Button</h3>
-      <button onclick="getData()">Retrieve Data</button>
+      <button onclick="getData()">Show Comments</button>
       <div id="data-container"></div>
+
+      <h3>Comments</h3>
+      <form action="/data" method="POST">
+
+      <p>Enter your comment:</p>
+      <textarea class = "comment-box" name="comment">Type your comment here</textarea>
+      <br/><br/>
+
+      <input type="submit" />
+      </form>
     </div>
   </body>
 </html>
