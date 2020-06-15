@@ -15,18 +15,17 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+function getData() {
+  fetch('/data').then(response => response.json()).then((data) => {
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+    const dataElement = document.getElementById('data-container');
+    dataElement.innerHTML = '';
+    dataElement.appendChild(createListElement(data[0]));
+    dataElement.appendChild(createListElement(data[1]));
+    data.map(creatListElement)
+            .forEach(dataElement.appendChild);
+  });
 }
-
 function addRandomFact() {
   const facts =
       ['Peanuts aren\'t actually nuts', 'A group of squids is called a squad', 
@@ -38,4 +37,10 @@ function addRandomFact() {
   // Add it to the page.
   const factContainer = document.getElementById('fact-container');
   factContainer.innerText = fact;
+}
+
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }
