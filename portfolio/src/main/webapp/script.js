@@ -16,8 +16,13 @@
  * Adds a random greeting to the page.
  */
 function getData() {
-  fetch('/data').then(response => response.text()).then((data) => {
-    document.getElementById('data-container').innerText = data;
+  fetch('/data').then(response => response.json()).then((data) => {
+
+    const dataElement = document.getElementById('data-container');
+    dataElement.innerHTML = '';
+    dataElement.appendChild(createListElement(data[0]));
+    dataElement.appendChild(createListElement(data[1]));
+    dataElement.appendChild(createListElement(data[2]));
   });
 }
 function addRandomFact() {
@@ -31,4 +36,10 @@ function addRandomFact() {
   // Add it to the page.
   const factContainer = document.getElementById('fact-container');
   factContainer.innerText = fact;
+}
+
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }
