@@ -17,7 +17,6 @@
  */
 function getData() {
   fetch('/data').then(response => response.json()).then((data) => {
-
     const dataElement = document.getElementById('data-container');
 
     dataElement.innerHTML = ''; 
