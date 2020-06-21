@@ -21,7 +21,7 @@ function getData() {
 
     dataElement.innerHTML = ''; 
     data.map(createListElement)
-        .forEach(element => dataElement.appendChild(element)); 
+        .forEach(element => dataElement.appendChild(element));
   });
 }
 
